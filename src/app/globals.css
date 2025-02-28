@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Primary Colors */
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  /* Neutral Colors */
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+.font-mono{
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+.strong-cyan {
+  color: var(--strong-cyan);
+}
+
+.bg-strong-cyan {
+  background-color: var(--strong-cyan);
+}
+
+.very-dark-cyan {
+  color: var(--very-dark-cyan);
+}
+
+.bg-very-dark-cyan {
+  background-color: var(--very-dark-cyan);
+}
+
+.dark-grayish-cyan {
+  color: var(--dark-grayish-cyan);
+}
+
+.bg-dark-grayish-cyan {
+  background-color: var(--dark-grayish-cyan);
+}
+
+.grayish-cyan {
+  color: var(--grayish-cyan);
+}
+
+.bg-grayish-cyan {
+  background-color: var(--grayish-cyan);
+}
+
+.light-grayish-cyan {
+  color: var(--light-grayish-cyan);
+}
+
+.bg-light-grayish-cyan {
+  background-color: var(--light-grayish-cyan);
+}
+
+.very-light-grayish-cyan {
+  color: var(--very-light-grayish-cyan);
+}
+
+.bg-very-light-grayish-cyan {
+  background-color: var(--very-light-grayish-cyan);
+}
+
+.white {
+  color: var(--white);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.border-color{
+  border:2px solid var(--grayish-cyan);
+}
+
+/* Form Inputs */
+input, textarea, select {
+  font-size: 24px;
+}
