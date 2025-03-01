@@ -3,7 +3,7 @@ import { CalculatorContainer } from "./components/calculator-container";
 
 export default function Home() {
   return (
-    <div className="font-mono grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-light-grayish-cyan">
+    <div className="font-mono grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-light-grayish-cyan">
       <h1 className="text-very-dark-cyan text-2xl font-medium text-center mb-8 tracking-widest very-dark-cyan">
         SPLI<br />TTER
       </h1>
