@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 export const CalculatorContainer: React.FC = () => {
   const [bill, setBill] = useState<number>(0);
@@ -8,7 +8,8 @@ export const CalculatorContainer: React.FC = () => {
   const [numberOfPeople, setNumberOfPeople] = useState<number>(1);
 
   const calculateTip = () => {
-    if (bill <= 0 || numberOfPeople <= 0) return { tipPerPerson: 0, totalPerPerson: 0 };
+    if (bill <= 0 || numberOfPeople <= 0)
+      return { tipPerPerson: 0, totalPerPerson: 0 };
 
     const tip = tipPercentage ? (bill * tipPercentage) / 100 : customTip || 0;
     const total = bill + tip;
@@ -39,7 +40,9 @@ export const CalculatorContainer: React.FC = () => {
     setTipPercentage(null);
   };
 
-  const handleNumberOfPeopleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNumberOfPeopleChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const value = parseFloat(e.target.value);
     setNumberOfPeople(isNaN(value) ? 1 : value);
   };
@@ -64,7 +67,7 @@ export const CalculatorContainer: React.FC = () => {
                 type="number"
                 id="bill"
                 placeholder="0"
-                value={bill === 0 ? '' : bill}
+                value={bill === 0 ? "" : bill}
                 onChange={handleBillChange}
                 className="w-full very-dark-cyan bg-light-grayish-cyan text-right py-2 px-4 rounded-lg border-2 border-transparent focus:border-strong-cyan focus:outline-none"
               />
@@ -75,16 +78,16 @@ export const CalculatorContainer: React.FC = () => {
           </div>
 
           <div>
-            <label className="dark-grayish-cyan font-bold">
-              Select Tip %
-            </label>
+            <label className="dark-grayish-cyan font-bold">Select Tip %</label>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
               {[5, 10, 15, 25, 50].map((tip) => (
                 <button
                   key={tip}
                   onClick={() => handleTipClick(tip)}
                   className={` text-white py-3 rounded-lg hover:bg-strong-cyan transition-colors ${
-                    tipPercentage === tip ? 'bg-strong-cyan' : 'bg-very-dark-cyan'
+                    tipPercentage === tip
+                      ? "bg-strong-cyan"
+                      : "bg-very-dark-cyan"
                   }`}
                 >
                   {tip}%
@@ -93,7 +96,7 @@ export const CalculatorContainer: React.FC = () => {
               <input
                 type="number"
                 placeholder="Custom"
-                value={customTip === null ? '' : customTip}
+                value={customTip === null ? "" : customTip}
                 onChange={handleCustomTipChange}
                 className="bg-very-light-grayish-cyan very-dark-cyan text-center py-1 px-1 rounded-lg border-2 border-transparent focus:border-3 focus:border-[hsl(172,67%,45%)] focus:outline-none"
               />
@@ -103,7 +106,9 @@ export const CalculatorContainer: React.FC = () => {
           <div>
             <label htmlFor="people" className="dark-grayish-cyan font-bold">
               Number of People
-              {!numberOfPeople ? <span className='text-red-400 float-right'>Cant't be zero</span>: null}
+              {!numberOfPeople ? (
+                <span className="text-red-400 float-right">Can&apos;t be zero</span>
+              ) : null}
             </label>
             <div className="relative mt-2">
               <input
@@ -112,7 +117,11 @@ export const CalculatorContainer: React.FC = () => {
                 placeholder="0"
                 value={numberOfPeople}
                 onChange={handleNumberOfPeopleChange}
-                className={`w-full bg-light-grayish-cyan very-dark-cyan text-right py-2 px-4 rounded-lg border-2  focus:border-strong-cyan focus:outline-none ${numberOfPeople === 0 ? 'border-3 border-red-300' : 'border-transparent'}`}
+                className={`w-full bg-light-grayish-cyan very-dark-cyan text-right py-2 px-4 rounded-lg border-2  focus:border-strong-cyan focus:outline-none ${
+                  numberOfPeople === 0
+                    ? "border-3 border-red-300"
+                    : "border-transparent"
+                }`}
               />
               <span className="absolute inset-y-0 left-4 flex items-center text-dark-grayish-cyan">
                 👤
@@ -128,14 +137,18 @@ export const CalculatorContainer: React.FC = () => {
                 <h2 className="text-white font-bold">Tip Amount</h2>
                 <p className="text-grayish-cyan text-sm">/ person</p>
               </div>
-              <span className="text-strong-cyan text-3xl font-bold">${tipPerPerson}</span>
+              <span className="text-strong-cyan text-3xl font-bold">
+                ${tipPerPerson}
+              </span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h2 className="text-white font-bold">Total</h2>
                 <p className="text-grayish-cyan text-sm">/ person</p>
               </div>
-              <span className="text-strong-cyan text-3xl font-bold">${totalPerPerson}</span>
+              <span className="text-strong-cyan text-3xl font-bold">
+                ${totalPerPerson}
+              </span>
             </div>
           </div>
           <button
